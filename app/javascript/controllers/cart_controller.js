@@ -13,20 +13,7 @@ export default class extends Controller {
       },
       body: JSON.stringify({ quantity: quantity }),
     }).then(() => {
-      location.reload(); // For simplicity, reload the page
+      location.reload();
     });
   }
-  applyDiscount(event) {
-    const discount = event.target.value;
-    const discountValueElement = document.getElementById("discount-value");
-    const totalAmountElement = document.getElementById("total-amount");
-
-    // Update discount value display
-    discountValueElement.innerText = discount;
-
-    // Update total amount
-    const originalAmount = parseFloat(totalAmountElement.dataset.originalAmount);
-    const discountedAmount = originalAmount - discount;
-    totalAmountElement.innerText = `$${discountedAmount.toFixed(2)}`;
-  }  
 }

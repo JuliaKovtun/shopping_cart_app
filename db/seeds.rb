@@ -8,14 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# Product.create([
-#   { name: 'Product 1', price: 10 },
-#   { name: 'Product 2', price: 15 },
-#   { name: 'Product 3', price: 20 }
-# ])
 
 Product.create([
-  { name: 'Wireless speaker, Goodyear', price: 100, image_url: 'speaker.jpg' },
+  { name: 'Wireless speaker, Goodyear', price: 70, image_url: 'speaker.jpg' },
   { name: 'Women’s Home Suit, Sweet Dreams', price: 25, image_url: 'suit.jpg' },
   { name: 'Raincoat, SwissOak', price: 50, image_url: 'raincoat.jpg' }
 ])

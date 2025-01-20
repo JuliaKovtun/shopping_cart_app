@@ -1,0 +1,29 @@
+<div class="space-y-4">
+  <% cart_items.each do |cart_item| %>
+    <%= render 'cart_items/cart_item', cart_item: %>
+  <% end %>
+</div>
+
+<% if @cart.cart_items.any? %>
+  <div class="mt-8 p-6 bg-white shadow-md rounded-md">
+    <p class="text-gray-500 text-sm"><%= @cart.cart_items.sum(&:quantity) %> items</p>
+    <hr class="my-4 border-gray-200" />
+
+    <div class="flex justify-between">
+      <p class="text-gray-700 text-lg font-semibold text-left">Total:</p>
+      <p id="text-gray-700 text-lg font-semibold" class="text-right">$
+        <%= @cart.total_amount %>
+      </p>
+    </div>
+
+    <div class="mt-4">
+      <%= button_to 'Place order', checkout_carts_path, method: :put, 
+          class: "w-full bg-green-600 text-white text-center px-6 py-3 rounded-md hover:bg-green-700 transition" %>
+    </div>
+  </div>
+
+<% else %>
+  <div class="flex flex-col items-center justify-center h-[60vh] text-center space-y-4">
+    <%= image_tag 'empty_box.svg', alt: 'Box'%>
+  </div>
+<% end %>
